@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="workflow">
+  <table name="PMT_CAMBIOS_SISTEMAS" idMethod="native">
+    <vendor type="mysql">
+      <parameter name="Collation" value="utf8_general_ci"/>
+    </vendor>
+    <column name="ID_CAMBIO_SISTEMA" type="INTEGER" size="11" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="NOM_CAMBIO_SISTEMA" type="VARCHAR" size="150" required="true"/>
+    <column name="DESC_CAMBIO_SISTEMA" type="VARCHAR" size="255" required="false"/>
+  </table>
+  <table name="PMT_INFORMACION_SOLICITUD">
+    <vendor type="mysql">
+      <parameter name="Collation" value="utf8_general_ci"/>
+    </vendor>
+    <column name="ID_SOLICITUD" type="VARCHAR" size="255" required="true" primaryKey="true"/>
+    <column name="ID_USUARIO" type="INTEGER" size="11" required="true"/>
+    <column name="ID_CAMBIO" type="INTEGER" size="11" required="true"/>
+    <column name="DESC_CAMBIO" type="VARCHAR" size="1255" required="false"/>
+    <column name="TEL_CAMBIO" type="VARCHAR" size="12" required="false"/>
+    <column name="FECHA_CAMBIO" type="TIMESTAMP" required="true"/>
+  </table>
+</database>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynaForm type="xmlform" name="62280273450fd5f689966c3090455521/38476562550fd6b2c4a6d25072115627" width="550" enabletemplate="0" mode="" nextstepsave="prompt" printdynaform="0">
+  <FormularioACR type="title" enablehtml="0" btn_cancel="Cancel" required="0" readonly="0" savelabel="0">
+    <en>Application Change Request Form</en>
+  </FormularioACR>
+  <tipoDeCambio type="currency" validate="Real" comma_separator="." mask="###,###,###,###.##" required="1" readonly="0" size="5" mode="view" btn_cancel="Cancel" defaultvalue="" hint="" formula="" function="" sqlconnection="" savelabel="0">
+    <en><![CDATA[Tipo de Cambio del Dólar]]></en>
+  </tipoDeCambio>
+  <nombreUsuario type="text" maxlength="64" validate="Alpha" required="1" readonly="0" size="15" mode="edit" btn_cancel="Cancel" mask="" strto="UPPER" dependentfields="" defaultvalue="" hint="" formula="" function="" sqlconnection="" savelabel="0">
+    <en>Nombre(s)</en>
+  </nombreUsuario>
+  <apellidoUsuario type="text" maxlength="64" validate="Alpha" required="1" readonly="0" size="15" mode="edit" btn_cancel="Cancel" mask="" strto="UPPER" dependentfields="" defaultvalue="" hint="" formula="" function="" sqlconnection="" savelabel="0">
+    <en>Apellidos</en>
+  </apellidoUsuario>
+  <numTel type="text" maxlength="64" validate="AlphaNum" mask="#-#######" required="0" readonly="0" size="15" mode="edit" btn_cancel="Cancel">
+    <en><![CDATA[Teléfono]]></en>
+  </numTel>
+  <fechaActual type="date" startdate="2013-01-01" enddate="2015-01-30" mask="%Y-%m-%d" editable="0" required="1" readonly="0" showtime="0" defaultvalue_sel="today" defaultvalue="today" mode="view" btn_cancel="Cancel">
+    <en>Fecha de la solicitud</en>
+  </fechaActual>
+  <cambiosSistemas type="dropdown" required="1" readonly="0" mode="edit" btn_cancel="Cancel" dependentfields="" defaultvalue="" hint="" sqlconnection="" savelabel="0"> SELECT ID_CAMBIO_SISTEMA, NOM_CAMBIO_SISTEMA FROM PMT_CAMBIOS_SISTEMAS<en>Cambio solicitado</en>
+  </cambiosSistemas>
+  <descripcion type="textarea" required="0" readonly="0" rows="2" cols="32" mode="edit" btn_cancel="Cancel" defaultvalue="" hint="" sqlconnection="" savelabel="0">
+    <en>Descripcion detallada del cambio solicitado</en>
+  </descripcion>
+  <idUser type="hidden" mode="edit" btn_cancel="Cancel" defaultvalue="" sqlconnection="" required="0" readonly="0" savelabel="0">  </idUser>
+  <enviar type="submit" btn_cancel="Cancel">
+    <en>Enviar Solicitud</en>
+  </enviar>
+  <validarDescripcion type="javascript" meta=""><![CDATA[    function checkEmpty() {
+      if (getField("descripcion ").value == "") {
+         getField("descripcion ").style.borderColor="RED";
+         return false;
+      else
+         return true;
+      }
+      document.onsubmit = checkEmpty;]]></validarDescripcion>
+  <Borrar type="reset" btn_cancel="Cancel">
+    <en>borrar</en>
+  </Borrar>
+</dynaForm>
